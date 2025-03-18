@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            background-color: #999;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+        }
+        h1{
+            font-size: 32px;
+            font-weight: bold;
+        }
+        h2{
+            font-size: 16px;
+            color:#333;
+        }
+        #titulo, #subtitulo{
+            text-align: center;
+            background-color: brown;
+            padding: 2%;
+            margin: 0;
+            color: beige;
+        }
+        #titulo{          
+            padding-bottom: 0;
+            font-size: 40px;     
+        }
+        #subtitulo{
+            padding-top: 0; 
+        }
+        #Noticias, #Eventos {
+            background-color: bisque;
+            box-shadow: #333 2px 2px 5px;
+            overflow: hidden;
+            width: 76%;
+            margin: 20px auto;
+            padding: 2%;
+            text-align: center;
+        }
+        #Noticias h2{
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+        }
+        .col2 {
+            width: 42%;
+            padding-left: 2%;
+            padding-right: 2%;
+            margin-left: 1%;
+            margin-right: 1%;
+            float: left;
+        }
+        .col3{
+            width: 27%;
+            padding-left: 2%;
+            padding-right: 2%;
+            margin-left: 1%;
+            margin-right: 1%;
+            float: left; 
+        }
+        .patrocinadores {
+            background-color: bisque;
+            box-shadow: #333 2px 2px 5px;
+            overflow: hidden;
+            width: 76%;
+            margin: 20px auto;
+            padding: 2%;
+            text-align: center;
+        }
+        .col5{
+            background-color: coral;
+            color:  white;
+            overflow: hidden;
+            width: 18%;
+            margin: 0.5%;
+            padding: 0.5%;
+            float: left;
+        }
+        .patrocinadores .col5{
+            background-color:bisque;
+            color:#333;
+        }
+        #pie{
+            width: 80%;
+            padding: 10%;
+            background-color: #333;
+            color: white;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Bienvenidos a mi Web de Noticias y Eventos</h1>
+    <h2 id="subtitulo">Noticias del Mundo</h2>
+    <a href="#titulo">titulo</a>
+    <a href="#Noticias">Noticias</a>
+    <a href="#Eventos">Eventos</a>
+    <a href="#subtitulo">Subtitulo</a>
+
+    <div id="Noticias">
+        <h1>Noticias Deportivas</h1>
+        <h2>Ultima hora</h2>
+        <div class="col2">El Real Madrid Gano su partido contra el Atletico de Madrid el miercoles en Champions</div>
+        <div class="col2">Este fin de semana el Albacete Balompie juega contra el Malaga</div>
+    </div>
+    <div id="Eventos">
+        <h1>Eventos Deportivos</h1>
+        <h2>ultimos eventos</h2>
+        <div class="col3">Real Madrid - Barcelona</div>
+        <div class="col3">Atletico - Betis</div>
+        <div class="col3">Sevilla - Leganes</div>
+    </div>
+    <div class="patrocinadores">
+        <h2>Patrocinadores</h2>
+        <div class="col5">Cruzcampo</div>
+        <div class="col5">Mahou</div>
+        <div class="col5">Heineken</div>
+        <div class="col5">Coca cola</div>
+        <div class="col5">Sugus</div>
+    </div>
+    <div class="patrocinadores">
+        <h2>Patrocinadores</h2>
+        <div class="col5">Lays</div>
+        <div class="col5">Apetinas</div>
+        <div class="col5">Burger King</div>
+        <div class="col5">KFC</div>
+        <div class="col5">McDonalds</div>
+    </div>
+    <h2>Logos</h2>
+    <div class="col5">Logo 1</div>
+    <div class="col5">Logo 2</div>
+    <div class="col5">Logo 3</div>
+    <div class="col5">Logo 4</div>
+    <div class="col5">Logo 5</div>
+    <div id="pie">Es es el pie de pagina</div>
+</body>
+</html>

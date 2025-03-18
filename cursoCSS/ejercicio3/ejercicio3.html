@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        #eventos{
+            background-color: #999;
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: #333 5px 5px 10px;
+            text-align: center;
+        }
+        h1{
+            color:  white;
+            text-shadow: #333 1px 1px 1px;
+            font-size: 40px;
+        }
+        .caja{
+            background-color: #f7efef;
+            border: #333 1px solid;
+            border-radius: 8px;
+            box-shadow: #333 3px 3px 3px;
+            width: 80%;
+            margin: 15px auto;
+            padding: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .caja:hover{
+            transform: scale(0.95);
+            box-shadow:  3px 3px 12px #666;
+        
+        }
+        .caja h1{
+            font-size: 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+            
+        }
+        .caja h1:hover{
+            color: #333;
+            transform: translateX(-65px);
+        }
+        .caja img{
+            width: 80%;
+            border-radius: 15px;
+            transition: all 0.5s ease;
+        }
+        .caja img:hover{
+            border: #333 2px solid;
+            transform: scale(1.03);
+            filter: brightness(1.5);
+            filter: contrast(1.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="eventos">
+        <h1>Eventos Dragon Ball</h1>
+        <div class="caja">
+            <h1>Dragon Ball</h1>
+            <h2>Serie inicial de Dragon Ball</h2>
+            <img src="img/db1.jpg" alt="Dragon Ball">
+        </div>
+        <div class="caja">
+            <h1>Dragron Ball Super</h1>
+            <h2>Saga de Dragon Ball Super</h2>
+            <img src="img/db2.jpg" alt="Dragon Ball super">
+        </div>
+    </div>
+</body>
+</html>
