@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .catalogo{
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            background-color: #f0f0f0;
+            padding: 20px;  
+            border: #999 2px solid;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .producto{
+            position: relative;
+            flex: 1;
+            padding: 15px;
+            border: #333 2px solid;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .producto:hover{
+            transform: scale(1.03);
+            box-shadow:  0 3px 6px rgba(0,0,0,0.2);
+        }
+        .destacado{
+            position: relative;
+            flex: 2;
+            padding: 15px;
+            border: #333 2px solid;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .destacado:hover{
+            transform: scale(1.03);
+            box-shadow:  0 3px 6px rgba(0,0,0,0.2);
+        }
+        .producto h2{
+            margin-bottom: 10px;
+            color:#2d3436;
+        }
+        .fotos{
+            width: 100%;
+            text-align: center;  
+            overflow: hidden;  
+            height: 150px;      
+        }
+
+       .fotos img{     
+            width: 100%;       
+        
+            
+        }
+        .descripcion{
+            font-size: 14px;
+            color:#636e72;
+            margin-bottom: 15px;
+        }
+        .precio{
+            font-weight: bold;
+            color:#27ae60;
+            font-size: 16px;
+        }
+        .oferta{
+            position:absolute;
+            top: 10px;
+            right: -10px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            rotate: 45deg;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="catalogo">
+
+        <div class="producto">
+            <span class="oferta">¡Oferta!</span>
+            <div class="fotos"><img src="img/vaqueros.webp"></div>            
+           <h2>Vaqueros Slim fit</h2> 
+           <p class="descripcion">Ajustados al cuerpo, modernos y comodos</p>
+           <p class="precio">49,99 €</p>
+        </div>
+
+        <div class="producto">
+            <div class="fotos"><img src="img/image.png"></div>
+            <h2>Vaqueros Clasicos</h2>            
+            <p class="descripcion">Corte recto y atemporal. Ideal para cualquier ocasión</p>
+            <p class="precio">39,99 €</p>
+         </div>
+
+         <div class="producto">
+            <span class="oferta">¡Oferta!</span>
+            <div class="fotos"><img src="img/vaquero3.avif"></div>
+            <h2>Vaqueros Rotos</h2> 
+            <p class="descripcion">Estilo urbano con rotos en las rodillas. Solo para los mas atrevidos</p>
+            <p class="precio">59,99 €</p>
+         </div>
+
+    </div>
+    <div class="catalogo">
+
+        <div class="producto">
+            <span class="oferta">¡Oferta!</span>
+            <div class="fotos"><img src="img/vaqueros.webp"></div>
+           <h2>Vaqueros Slim fit</h2> 
+           <p class="descripcion">Ajustados al cuerpo, modernos y comodos</p>
+           <p class="precio">49,99 €</p>
+        </div>
+
+        <div class="producto">
+            <div class="fotos"><img src="img/vaquero3.avif"></div>
+            <h2>Vaqueros Clasicos</h2>             
+            <p class="descripcion">Corte recto y atemporal. Ideal para cualquier ocasión</p>
+            <p class="precio">39,99 €</p>
+         </div>
+
+         <div class="destacado">
+            <span class="oferta">¡Oferta!</span>
+            <div class="fotos"><img src="img/baner.jpg"></div>
+            <h2>Vaqueros Rotos</h2> 
+            <p class="descripcion">Estilo urbano con rotos en las rodillas. Solo para los mas atrevidos</p>
+            <p class="precio">59,99 €</p>
+         </div>
+
+    </div>
+    <div class="catalogo">
+
+        <div class="producto">
+            <span class="oferta">¡Oferta!</span>
+            <div class="fotos"><img src="img/vaquero3.avif"></div>
+           <h2>Vaqueros Slim fit</h2> 
+           <p class="descripcion">Ajustados al cuerpo, modernos y comodos</p>
+           <p class="precio">49,99 €</p>
+        </div>
+
+         <div class="destacado">
+            <span class="oferta">¡Oferta!</span>
+            <div class="fotos"><img src="img/vaqueros.webp"></div>
+            <h2>Vaqueros Rotos</h2> 
+            <p class="descripcion">Estilo urbano con rotos en las rodillas. Solo para los mas atrevidos</p>
+            <p class="precio">59,99 €</p>
+         </div>
+
+    </div>
+</body>
+</html>
