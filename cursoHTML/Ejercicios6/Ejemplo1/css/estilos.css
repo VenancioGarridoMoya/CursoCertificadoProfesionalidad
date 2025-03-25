@@ -1,0 +1,8 @@
+table,td,th {
+    border: 1px solid red;
+    border-collapse: collapse;
+}
+table{
+    margin:auto;
+    width: 90%;
+}

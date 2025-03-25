@@ -10,7 +10,7 @@
             max-width: 1000px;
             margin: 40px auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
             gap: 20px;
             background-color: #f0f0f0;
             padding: 20px;  
@@ -20,30 +20,26 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        .producto{
-            position: relative;
-            flex: 1;
+        .producto, .destacado{
+            position: relative;            
             padding: 15px;
             border: #333 2px solid;
             border-radius: 8px;
             background-color: #fff;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .producto{
+            flex: 1;
+        }
+        .destacado{
+            flex: 2;
         }
         .producto:hover{
             transform: scale(1.03);
             box-shadow:  0 3px 6px rgba(0,0,0,0.2);
         }
-        .destacado{
-            position: relative;
-            flex: 2;
-            padding: 15px;
-            border: #333 2px solid;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+        
         .destacado:hover{
             transform: scale(1.03);
             box-shadow:  0 3px 6px rgba(0,0,0,0.2);
@@ -99,7 +95,16 @@
            <p class="descripcion">Ajustados al cuerpo, modernos y comodos</p>
            <p class="precio">49,99 €</p>
         </div>
-
+        
+        <div class="producto">
+            <span class="oferta">¡Oferta!</span>
+            <div class="fotos"><img src="img/vaqueros.webp"></div>            
+           <h2>Vaqueros Slim fit</h2> 
+           <p class="descripcion">Ajustados al cuerpo, modernos y comodos</p>
+           <p class="precio">49,99 €</p>
+        </div>
+    </div>
+    <div class="catalogo">    
         <div class="producto">
             <div class="fotos"><img src="img/image.png"></div>
             <h2>Vaqueros Clasicos</h2>            
