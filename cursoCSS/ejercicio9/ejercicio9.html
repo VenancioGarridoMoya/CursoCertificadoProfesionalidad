@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #4d1b11;
+    color: white;
+}
+header{
+    background-color: #b33f27;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+.banner {
+    background: url(foto.jpg) no-repeat center;
+    background-size: cover;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+.boton{
+    background-color: #de4e31;
+    color:white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.boton:hover{
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba (0,0,0,0.3);
+}
+.bounce {
+    animation: bounce 1s infinite;
+}
+.slideIn{
+    animation: slideIn 1.5s ease-in-out;
+}
+.pulse{
+    animation: pulse 1.5s infinite;
+}
+.icono {
+    font-size: 40px;
+    margin: 20px 0;
+}
+.spin{
+    animation: spin 2s linear infinite;
+}
+.caja{
+    width: 200px;
+    height: 100px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: transform 0.5s;
+}
+.caja1{background: #d77866; cursor: pointer;}
+.caja2{background: #b33f27; cursor: crosshair;}
+.caja3{background: #de4e31; cursor: wait;}
+.caja4{background: #913320; cursor: grab;}
+
+@keyframes fadeIn{
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1;transform: translateY(0);}
+
+}
+@keyframes slideIn{
+    from {opacity: 0; transform: translateX(-100px);}
+    to {opacity: 1;transform: translateX(0);}
+}
+@keyframes bounce {
+    0%, 100% {transform: translateY(0);}
+    75%{transform: translateY(-10px);}
+}
+@keyframes pulse {
+    0% {transform: scale(1);}
+    75% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+}
+@keyframes spin{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-360deg);}
+}
+
+    </style>
+</head>
+<body>
+ 
+    <header>
+        <h1>Ejemplo de Animaciones y cursores</h1>
+    </header>
+    <div class="banner">
+        <h2 class="slideIn">Bienvenido a la Gamestore</h2>
+    </div>
+    <main>
+        <button class="boton bounce">Explorar ahora</button>
+
+        <button class="boton pulse">Ver Ofertas</button>
+        
+        <div class="icono spin">🔄</div>
+
+        <div class="caja caja1">Pointer</div>
+        <div class="caja caja2">Crosshair</div>
+        <div class="caja caja3">Wait</div>
+        <div class="caja caja4">Grab</div>
+    </main>
+    
+</body>
+</html>

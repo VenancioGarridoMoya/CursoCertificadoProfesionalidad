@@ -1,0 +1,52 @@
+table {
+    width: 100%;
+}
+
+table,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#columna1 {
+    background-color: aqua;
+}
+
+#columnas2 {
+    background-color: rgb(96, 42, 195);
+}
+
+#columna3 {
+    background-color: brown;
+}
+
+caption {
+    color: blue;
+    size: 15em;
+}
+
+
+
+td.menu {
+
+    width: 25%;
+
+    background-color: lightyellow;
+
+}
+
+td.contenido {
+
+    width: 50%;
+
+    background-color: beige;
+
+}
+
+td.lateral {
+
+    width: 25%;
+
+    background-color: bisque;
+
+}
