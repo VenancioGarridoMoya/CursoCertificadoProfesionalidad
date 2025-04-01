@@ -1,0 +1,17 @@
+table {
+    border-style:solid;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 3em;
+    
+}
+td {
+    border-style: solid;
+    padding: 5px;
+    background-color: aquamarine;
+}
+th {
+    border-style: solid;
+    padding: 5px;
+    background-color: rgb(77, 134, 179);
+}

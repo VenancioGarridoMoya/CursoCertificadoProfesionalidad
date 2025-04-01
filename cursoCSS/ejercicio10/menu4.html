@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        header{
+            background: #b33f27;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;           
+        }
+        nav ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li{
+            position:relative;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover{
+            color:#d77866;
+        }
+        .dropdown{
+            display: none;
+            position: absolute;
+            top:100%;
+            left:0;
+            background: #913320;
+            list-style: none;
+            padding: 10px;
+            width: 150px;
+        }
+        .dropdown li{
+            padding: 5px 0;
+        }
+        .dropdown li a{
+            display: block;        
+        }
+        .submenu:hover .dropdown{
+            display: block;
+        }
+        @media (max-width:768px){
+            header{
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul{
+                flex-direction: column;
+                align-items: center;
+            }
+            .dropdown{
+                position: static;
+                display: none;
+                background: none;
+                padding: 0;
+            }
+            .submenu:hover .dropdown, .submenu:focus-within .dropdown{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gamestore</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li class="submenu">
+                    <a href="#">Categorias 🔻</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Play</a></li>
+                        <li><a href="#">Nintendo</a></li>
+                        <li><a href="#">PC</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Contacto</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Bienvenido a la Gamestore</h1>
+        <h2>Bienvenido a la Gamestore</h2>
+        <h3>Bienvenido a la Gamestore</h3>
+        <h1>Bienvenido a la Gamestore</h1>
+        <h2>Bienvenido a la Gamestore</h2>
+        <h3>Bienvenido a la Gamestore</h3>
+        <h1>Bienvenido a la Gamestore</h1>
+        <h2>Bienvenido a la Gamestore</h2>
+        <h3>Bienvenido a la Gamestore</h3>
+        <h1>Bienvenido a la Gamestore</h1>
+        <h2>Bienvenido a la Gamestore</h2>
+        <h3>Bienvenido a la Gamestore</h3>
+        <h1>Bienvenido a la Gamestore</h1>
+        <h2>Bienvenido a la Gamestore</h2>
+        <h3>Bienvenido a la Gamestore</h3>
+        <h1>Bienvenido a la Gamestore</h1>
+        <h2>Bienvenido a la Gamestore</h2>
+        <h3>Bienvenido a la Gamestore</h3>
+
+        
+    </main>
+</body>
+</html>
