@@ -1,0 +1,50 @@
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+/*   
+td {
+    border: 1px solid black;
+}
+    */
+thead {
+    background-color: beige;
+    text-align: center;
+}
+tbody {
+    background-color: azure;
+    text-align: center;
+
+}
+tfoot {
+    background-color: bisque;
+    text-align: center;
+
+}
+.primera {
+    color: darkred;
+    width: 80%;
+    font-size: 2em;
+    font-weight: bold;
+}
+.opciones {
+    background-color: #eee;
+    width: 20%;
+}
+h2 {
+    color:blue;
+    size: 2em;
+}
+li {
+    font-weight: bold;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+a:link {
+    text-decoration: none;
+    font-weight: bold;
+}
+
