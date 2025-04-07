@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .layout{
+            display: grid;
+            grid-template-areas: 
+            "header header"
+            "nav main"
+            "footer footer";
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: auto 1fr auto;
+            gap:20px
+        }
+        header{grid-area: header;
+        background: blue;}
+        nav{grid-area: nav;
+        background-color: beige;}
+        main{
+            grid-area: main;
+            display: flex;
+            gap:1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: blueviolet;
+        }
+        footer{
+            grid-area: footer;
+            background-color: cadetblue;
+        }
+        .producto{
+            flex: 200px;
+            background: #d77866;
+            padding: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <header>Encabezado</header>
+        <nav>Menu</nav>
+        <main class="contenido">
+            <section class="producto">Producto 1</section>
+            <section class="producto">Producto 2</section>
+            <section class="producto">Producto 3</section>
+        </main>
+        <footer>Pie de pagina</footer>
+    </div>
+</body>
+</html>
