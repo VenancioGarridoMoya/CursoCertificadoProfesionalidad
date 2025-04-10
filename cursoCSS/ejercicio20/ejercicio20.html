@@ -7,20 +7,6 @@
   <style>
     /* Variables de color por defecto (Tema claro) */
     :root {
-      --fondo-principal: #f0f0f0;
-      --color-texto: #333;
-      --color-header-footer: #333;
-      --color-nav: #444;
-      --color-boton: white;
-      --color-hover-boton: #333;
-      --color-item: #ddd;
-      --color-item-hover: #bbb;
-      --color-header-text: white;
-      --color-nav-text: white;   
-      --color-nav-hover: #b40054;}
-
-    /* Variables para el Tema Oscuro */
-    body.oscuro {
       --fondo-principal: #181818;
       --color-texto: #f0f0f0;
       --color-header-footer: #b40054;
@@ -32,6 +18,25 @@
       --color-header-text: white;
       --color-nav-text: #b40054;
       --color-nav-hover:white;
+      --valor: 0;
+    }
+
+    /* Variables para el Tema Oscuro */
+    body.oscuro {
+
+
+      --fondo-principal: #f0f0f0;
+      --color-texto: #333;
+      --color-header-footer: #333;
+      --color-nav: #444;
+      --color-boton: white;
+      --color-hover-boton: #333;
+      --color-item: #ddd;
+      --color-item-hover: #bbb;
+      --color-header-text: white;
+      --color-nav-text: white;   
+      --color-nav-hover: #b40054;
+      --valor: 1;
     }
 
     /* Reset general */
@@ -150,7 +155,11 @@
       background-color: var(--color-item-hover);
       transform: scale(1.05);
     }
-
+.grid-item img {
+      max-width: 100%;           
+      filter: grayscale(var(--valor));
+            border-radius: 8px;
+    }
     .about {
       margin-top: 40px;
       text-align: center;
@@ -208,8 +217,8 @@
     <section class="portfolio">
       <h2>Algunos de nuestros trabajos</h2>
       <div class="grid">
-        <div class="grid-item">Trabajo 1</div>
-        <div class="grid-item">Trabajo 2</div>
+        <div class="grid-item"><img src="2.jpg" alt="">Trabajo 1</div>
+        <div class="grid-item"><img src="3.jpg" alt="">Trabajo 2</div>
         <div class="grid-item">Trabajo 3</div>
         <div class="grid-item">Trabajo 4</div>
       </div>
