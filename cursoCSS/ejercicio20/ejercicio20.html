@@ -16,7 +16,8 @@
       --color-item: #ddd;
       --color-item-hover: #bbb;
       --color-header-text: white;
-    }
+      --color-nav-text: white;   
+      --color-nav-hover: #b40054;}
 
     /* Variables para el Tema Oscuro */
     body.oscuro {
@@ -29,6 +30,8 @@
       --color-item: #444;
       --color-item-hover: #555;
       --color-header-text: white;
+      --color-nav-text: #b40054;
+      --color-nav-hover:white;
     }
 
     /* Reset general */
@@ -88,9 +91,12 @@
 
     nav ul li a {
       text-decoration: none;
-      color: white;
+      color: var(--color-nav-text);
       font-weight: bold;
     }
+    nav ul li a:hover {      
+      color: var(--color-nav-hover);
+        }
 
  
     main {
@@ -100,18 +106,19 @@
     }
 
     .hero {
-      background: #fc60e5;
+      background:var(--color-header-footer);
       padding: 50px;
       text-align: center;
     }
 
     .hero h1 {
       font-size: 2.5rem;
-      color: var(--color-texto);
+      color: white;
     }
 
     .hero p {
       font-size: 1.2rem;
+      color: white;
     }
 
     .portfolio {
