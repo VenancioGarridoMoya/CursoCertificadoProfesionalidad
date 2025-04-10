@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesores Empresariales</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: grid;
+            grid-template-areas:
+                "header"
+                "nav"
+                "banner"
+                "content"
+                "footer";
+            grid-template-rows: auto auto 300px 1fr auto;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 1rem;
+            background-color: #004080;
+            color: white;
+            grid-area: header;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0066cc;
+            grid-area: nav;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            background-color: #004080;
+        }
+
+        .banner {
+            grid-area: banner;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            
+        }
+
+        .slider {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide 18s infinite;
+        }
+        .slide{
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+        }
+        .slide1{
+            background-image: url('1.jpg');
+        }
+        .slide2{
+            background-image: url('2.jpg');
+        }
+        .slide3{
+            background-image: url('3.jpg');
+        }
+.banner-texto {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 1rem;
+        }
+
+
+        @keyframes slide {
+            0%{transform: translateX(0%);}
+            33.33% {transform: translateX(-33.33%);}             
+            66.66% {transform: translateX(-66.66%);}
+            100% {transform: translateX(0%);}
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+            grid-area: content;
+        }
+
+        .service {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service img {
+            width: 100%;
+            max-width: 300px;
+            max-height: 150px;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+        }
+
+
+        .footer-info p {
+            margin-bottom: 10px;
+        }
+
+        .footer-social a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+   
+
+        /* Estilos para pantallas más grandes */
+        @media (min-width: 768px) {
+            body {
+
+                grid-template-rows: auto auto 300px 1fr auto;
+            }
+
+            .main-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer{
+                
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    
+        <header>
+            <h1>Asesores Empresariales</h1>
+            <h2>Tu socio estratégico en negocios</h2>
+        </header>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="banner">
+            <div class="slider">
+                <div class="slide slide1"></div>
+                <div class="slide slide2"></div>
+                <div class="slide slide3"></div>
+            </div>
+            <div class="banner-texto">
+                <h2>Transformando tu negocio</h2>
+                <p>Ofrecemos soluciones personalizadas para cada cliente.</p>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="service">
+                <img src="1.jpg" alt="Servicio 1">
+                <p>Consultoría Financiera</p>
+            </div>
+            <div class="service">
+                <img src="2.jpg" alt="Servicio 2">
+                <p>Planificación Estratégica</p>
+            </div>
+            <div class="service">
+                <img src="3.jpg" alt="Servicio 3">
+                <p>Gestión de Recursos Humanos</p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-info">
+                <p>Dirección: Calle Ficticia 123, Ciudad, País</p>
+                <p>Teléfono: +123 456 789</p>
+                <p>Email: contacto@asesoresempresariales.com</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" >🌐</a>
+                <a href="#" >🌐</a>
+                <a href="#" >🌐</a>
+            </div>
+        </footer>
+    
+</body>
+</html>
