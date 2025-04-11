@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball - Tema Claro/Oscuro</title>
+    <style>
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --button-bg: #f0db4f;
+            --button-text: #000000;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: all 0.3s ease-in-out;
+        }
+
+        header {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        #banner {
+            background-image: url('dragon.jpg'); /* Reemplaza con una imagen de Dragon Ball */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            #banner {
+            height: 200px;
+            font-size: 1.5rem;
+            }
+
+            #content p {
+            font-size: 1rem;
+            padding: 0 10px;
+            }
+
+            button {
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #banner {
+            height: 150px;
+            font-size: 1.2rem;
+            }
+
+            #content p {
+            font-size: 0.9rem;
+            }
+
+            button {
+            font-size: 0.8rem;
+            padding: 6px 12px;
+            }
+        }
+
+        #content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #e5c700;
+        }
+
+        .dark-theme {
+            --background-color: #1e1e1e;
+            --text-color: #ffffff;
+            --button-bg: #ff6f61;
+            --button-text: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dragon Ball</h1>
+    </header>
+    <div id="banner">
+        ¡Explora el mundo de Dragon Ball!
+    </div>
+    <div id="content">
+        <p>Bienvenido a la web temática de Dragon Ball. Haz clic en el botón para cambiar entre el tema claro y oscuro.</p>
+        <button id="themeToggle">Cambiar a Tema Oscuro</button>
+    </div>
+    <footer>
+        &copy; 2023 Dragon Ball Fan Page. Todos los derechos reservados.
+    </footer>
+
+    <script>
+        const button = document.getElementById('themeToggle');
+        let isDarkTheme = false;
+
+        button.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            isDarkTheme = !isDarkTheme;
+            button.textContent = isDarkTheme ? 'Cambiar a Tema Claro' : 'Cambiar a Tema Oscuro';
+        });
+    </script>
+</body>
+</html>

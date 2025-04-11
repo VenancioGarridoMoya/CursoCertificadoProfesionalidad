@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ejercicio20 </title>
+    <link rel="stylesheet" href="css/estilo.css"/>
+</head>
+<body>
+    <header>
+        <h1> CREATIVA STUDIO </h1>
+        <nav>
+            <ul>
+                <li> <a href="#servicios"> servicios </a></li>
+                <li> <a href="#testimonios"> testimonios </a></li>
+                <li> <a href="#contacto"> contacto </a></li>
+            </ul>
+        </nav>
+        <imput type="checkbox" id="cambio-tema"/>
+        <label for="cambio-tema" id="cambio-tema-label"> cambiar tema </label>
+    </header>
+      <section class="slider">
+        <div class="slides">
+            <div class="slide s1">
+                <div class="texto">
+                    <h2> la creatividad sin limites </h2>
+                    <p> Trransformamos ideas en experiencias visuales unicas </p>
+                </div>
+            </div>
+            <div class="slide s2">
+                <div class="texto">
+                    <h2> Diseño impactante </h2>
+                    <p> Transformamos ideas en experiencias visuales unicas</p>
+                </div>
+            </div>
+            <div class="slide s3">
+                <div class="texto">
+                    <h2> Webs que inspiran </h2>
+                    <p> Desarrollo web moderno, agil y centrado en el usuario </p>
+                </div>
+            </div>
+        </div>
+      </section>
+      <section id="servicios" class="seccion">
+        <h2> servicios Destacados </h2>
+        <div class="grid-servicios">
+            <div class="servicio">🎨 Disñeo grafico </div>
+            <div class="servicio">🖥️ desarrollo web </div>
+            <div class="servicio">🧠 branding </div>
+            <div class="servicio">📱 UX/UI </div>
+            <div class="servicio">📸 fotografia publicitaria</div>
+            <div class="servicio">📢 marketing digital </div>
+        </div>
+      </section>
+
+      <section id="testimonios" class="seccion">
+        <h2> Testimonios </h2>
+        <div class="testimonios">
+            <blockquote>
+                "creativa Studio llevo nuestra marca al siguiente nivel. ¡Un trabajo impecable!"
+                <cite> Marta lopez, Ceo Ecovida</cite>
+            </blockquote>
+            <blockquote>
+                "siempre atentos a los detalles. Superaron todas nuestras espectativas."
+                <cite> Jorge Ramirez, marketing de VisionTech </cite>
+            </blockquote>
+        </div>
+      </section>
+      <div class="fixed-banner">
+        🚀 ¡Lleva tu marca al siguiente nivek con creativa studio!
+      </div>
+      <footer>
+        <p> &copy; 2025 Creativa studio | todos los derechos reservados </p>
+        <p> diseño y desarrollo por el equipo creativa </p>
+    </footer>
+        <script>
+            const cambiotema = document.getElementById ('cambio-tema');
+            cambiotema.addEventListener('click', () => {
+                document.body.classList.toggle('oscuro');
+            });
+        </script>     
+</body>
+</html>
