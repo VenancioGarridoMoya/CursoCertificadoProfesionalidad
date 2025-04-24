@@ -13,3 +13,4 @@ document.getElementById("contenido").innerHTML =
 document.getElementById("contenido").style.color = "blue";
 document.getElementById("contenido").style.fontSize = "20px";
 document.getElementById("contenido").style.fontFamily = "Arial, sans-serif";
+
