@@ -52,6 +52,15 @@
             color: white;
             cursor: pointer;
         }
+        .uno{
+            background: url(../ejercicio21/1.jpg) no-repeat center center;
+            padding: 100px;
+            transition: background .5s;
+        }
+        .uno:hover{
+            background: url(../ejercicio21/2.jpg) no-repeat center center;
+        }
+
     </style>
 </head>
 <body>
@@ -68,7 +77,9 @@
         <img src="../ejercicio21/3.jpg" alt="Image 3" onclick="openLightbox(this.src)">
     </div>
 
-    
+    <div class="uno">
+        hola
+    </div>
 
     <script>
         function openLightbox(src) {
