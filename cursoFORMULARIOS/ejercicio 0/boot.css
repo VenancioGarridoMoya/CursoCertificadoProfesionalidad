@@ -3903,7 +3903,8 @@ fieldset:disabled .btn {
     background-color: var(--bs-dropdown-bg);
     background-clip: padding-box;
     border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
-    border-radius: var(--bs-dropdown-border-radius)
+    border-radius: var(--bs-dropdown-border-radius);
+    margin-left: 110px;
 }
 
 .dropdown-menu[data-bs-popper] {
