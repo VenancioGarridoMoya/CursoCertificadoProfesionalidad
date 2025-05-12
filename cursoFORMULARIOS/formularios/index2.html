@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperBuscador Multiplataforma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2 {
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .search-box {
+            margin-bottom: 15px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .checkboxes {
+            margin: 15px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>SuperBuscador Multiplataforma</h1>
+
+    <!-- 🔍 Sección 1: Buscadores Web -->
+    <div class="section">
+        <h2>🔍 Buscar en la Web</h2>
+        <div class="search-box">
+            <input type="text" id="webSearchQuery" placeholder="Ej: Inteligencia Artificial...">
+        </div>
+        <div class="checkboxes">
+            <label><input type="checkbox" name="webEngine" value="google"> Google</label>
+            <label><input type="checkbox" name="webEngine" value="bing"> Bing</label>
+            <label><input type="checkbox" name="webEngine" value="yahoo"> Yahoo</label>
+            <label><input type="checkbox" name="webEngine" value="duckduckgo"> DuckDuckGo</label>
+            <label><input type="checkbox" name="webEngine" value="ecosia"> Ecosia</label>
+            <label><input type="checkbox" name="webEngine" value="ask"> Ask</label>
+            <label><input type="checkbox" name="webEngine" value="qwant"> Qwant</label>
+            <label><input type="checkbox" name="webEngine" value="startpage"> Startpage</label>
+            <label><input type="checkbox" name="webEngine" value="yandex"> Yandex</label>
+            <label><input type="checkbox" name="webEngine" value="baidu"> Baidu</label>
+            <label><input type="checkbox" name="webEngine" value="swisscows"> Swisscows</label>
+            <label><input type="checkbox" name="webEngine" value="gibiru"> Gibiru</label>
+            <label><input type="checkbox" name="webEngine" value="metager"> MetaGer</label>
+            <label><input type="checkbox" name="webEngine" value="searx"> Searx</label>
+            <label><input type="checkbox" name="webEngine" value="mojeek"> Mojeek</label>
+        </div>
+        <button onclick="performWebSearch()">Buscar en la Web</button>
+    </div>
+
+    <!-- 🎥 Sección 2: Buscador de Videos -->
+    <div class="section">
+        <h2>🎥 Buscar Videos</h2>
+        <div class="search-box">
+            <input type="text" id="videoSearchQuery" placeholder="Ej: Tutorial de JavaScript...">
+        </div>
+        <div class="checkboxes">
+            <label><input type="checkbox" name="videoEngine" value="youtube"> YouTube</label>
+            <label><input type="checkbox" name="videoEngine" value="vimeo"> Vimeo</label>
+            <label><input type="checkbox" name="videoEngine" value="dailymotion"> Dailymotion</label>
+            <label><input type="checkbox" name="videoEngine" value="twitch"> Twitch (Clips)</label>
+            <label><input type="checkbox" name="videoEngine" value="odysee"> Odysee</label>
+            <label><input type="checkbox" name="videoEngine" value="rutube"> Rutube</label>
+        </div>
+        <button onclick="performVideoSearch()">Buscar Videos</button>
+    </div>
+
+    <!-- 📚 Sección 3: Buscador de Libros (PDF/EPUB) -->
+    <div class="section">
+        <h2>📚 Buscar Libros (PDF/EPUB)</h2>
+        <div class="search-box">
+            <input type="text" id="bookSearchQuery" placeholder="Ej: Cien años de soledad...">
+        </div>
+        <div class="checkboxes">
+            <label><input type="checkbox" name="bookEngine" value="googlebooks"> Google Books</label>
+            <label><input type="checkbox" name="bookEngine" value="openlibrary"> OpenLibrary</label>
+            <label><input type="checkbox" name="bookEngine" value="pdfdrive"> PDF Drive</label>
+            <label><input type="checkbox" name="bookEngine" value="zlibrary"> Z-Library (Mirror)</label>
+            <label><input type="checkbox" name="bookEngine" value="projectgutenberg"> Project Gutenberg</label>
+            <label><input type="checkbox" name="bookEngine" value="manybooks"> ManyBooks</label>
+            <label><input type="checkbox" name="bookEngine" value="libgen"> Library Genesis</label>
+        </div>
+        <button onclick="performBookSearch()">Buscar Libros</button>
+    </div>
+
+    <script>
+        // 🔍 Función para búsqueda en la Web
+        function performWebSearch() {
+            const searchQuery = document.getElementById("webSearchQuery").value.trim();
+            if (!searchQuery) {
+                alert("Introduce un término de búsqueda.");
+                return;
+            }
+
+            const checkboxes = document.querySelectorAll('input[name="webEngine"]:checked');
+            if (checkboxes.length === 0) {
+                alert("Selecciona al menos un buscador.");
+                return;
+            }
+
+            const searchEngines = {
+                google: `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`,
+                bing: `https://www.bing.com/search?q=${encodeURIComponent(searchQuery)}`,
+                yahoo: `https://search.yahoo.com/search?p=${encodeURIComponent(searchQuery)}`,
+                duckduckgo: `https://duckduckgo.com/?q=${encodeURIComponent(searchQuery)}`,
+                ecosia: `https://www.ecosia.org/search?q=${encodeURIComponent(searchQuery)}`,
+                ask: `https://www.ask.com/web?q=${encodeURIComponent(searchQuery)}`,
+                qwant: `https://www.qwant.com/?q=${encodeURIComponent(searchQuery)}`,
+                startpage: `https://www.startpage.com/search?q=${encodeURIComponent(searchQuery)}`,
+                yandex: `https://yandex.com/search/?text=${encodeURIComponent(searchQuery)}`,
+                baidu: `https://www.baidu.com/s?wd=${encodeURIComponent(searchQuery)}`,
+                swisscows: `https://swisscows.com/web?query=${encodeURIComponent(searchQuery)}`,
+                gibiru: `https://gibiru.com/results.html?q=${encodeURIComponent(searchQuery)}`,
+                metager: `https://metager.org/meta/meta.ger3?eingabe=${encodeURIComponent(searchQuery)}`,
+                searx: `https://searx.be/search?q=${encodeURIComponent(searchQuery)}`,
+                mojeek: `https://www.mojeek.com/search?q=${encodeURIComponent(searchQuery)}`
+            };
+
+            checkboxes.forEach(checkbox => {
+                const engine = checkbox.value;
+                window.open(searchEngines[engine], '_blank');
+            });
+        }
+
+        // 🎥 Función para búsqueda de videos
+        function performVideoSearch() {
+            const searchQuery = document.getElementById("videoSearchQuery").value.trim();
+            if (!searchQuery) {
+                alert("Introduce un término de búsqueda.");
+                return;
+            }
+
+            const checkboxes = document.querySelectorAll('input[name="videoEngine"]:checked');
+            if (checkboxes.length === 0) {
+                alert("Selecciona al menos una plataforma.");
+                return;
+            }
+
+            const videoEngines = {
+                youtube: `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery)}`,
+                vimeo: `https://vimeo.com/search?q=${encodeURIComponent(searchQuery)}`,
+                dailymotion: `https://www.dailymotion.com/search/${encodeURIComponent(searchQuery)}`,
+                twitch: `https://www.twitch.tv/search?term=${encodeURIComponent(searchQuery)}`,
+                odysee: `https://odysee.com/$/search?q=${encodeURIComponent(searchQuery)}`,
+                rutube: `https://rutube.ru/search/?query=${encodeURIComponent(searchQuery)}`
+            };
+
+            checkboxes.forEach(checkbox => {
+                const engine = checkbox.value;
+                window.open(videoEngines[engine], '_blank');
+            });
+        }
+
+        // 📚 Función para búsqueda de libros
+        function performBookSearch() {
+            const searchQuery = document.getElementById("bookSearchQuery").value.trim();
+            if (!searchQuery) {
+                alert("Introduce un término de búsqueda.");
+                return;
+            }
+
+            const checkboxes = document.querySelectorAll('input[name="bookEngine"]:checked');
+            if (checkboxes.length === 0) {
+                alert("Selecciona al menos una plataforma.");
+                return;
+            }
+
+            const bookEngines = {
+                googlebooks: `https://www.google.com/search?tbm=bks&q=${encodeURIComponent(searchQuery)}`,
+                openlibrary: `https://openlibrary.org/search?q=${encodeURIComponent(searchQuery)}`,
+                pdfdrive: `https://www.pdfdrive.com/search?q=${encodeURIComponent(searchQuery)}`,
+                zlibrary: `https://singlelogin.re/?q=${encodeURIComponent(searchQuery)}`,
+                projectgutenberg: `https://www.gutenberg.org/ebooks/search/?query=${encodeURIComponent(searchQuery)}`,
+                manybooks: `https://manybooks.net/search-book?search=${encodeURIComponent(searchQuery)}`,
+                libgen: `http://libgen.is/search.php?req=${encodeURIComponent(searchQuery)}`
+            };
+
+            checkboxes.forEach(checkbox => {
+                const engine = checkbox.value;
+                window.open(bookEngines[engine], '_blank');
+            });
+        }
+    </script>
+</body>
+</html>

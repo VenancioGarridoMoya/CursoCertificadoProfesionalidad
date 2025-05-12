@@ -14,6 +14,10 @@
       position: relative;
 	
     }
+    .dropdown-submenu2 {
+      position: relative;
+	
+    }
     .dropdown-menu {
       margin-left: 5%;
 	
@@ -25,9 +29,20 @@
       margin-top: -1px;
  
     }
+  .dropdown-submenu2 .dropdown-menu{
+      top: 35px;
+      left: 35%;
+      margin-top: -1px;
+ 
+    }
 
     /* Mostrar submenú al pasar el ratón */
     .dropdown-submenu:hover .dropdown-menu{
+      display: block;
+
+    }
+        /* Mostrar submenú2 al pasar el ratón */
+        .dropdown-submenu2:hover .dropdown-menu{
       display: block;
 
     }
@@ -66,9 +81,9 @@
             <li class="dropdown-submenu">
               <a class="dropdown-item dropdown-toggle" href="#">Perifericos</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Procesadores</a></li>
-                <li><a class="dropdown-item" href="#">Tarjetas Gráficas</a></li>
-                <li><a class="dropdown-item" href="#">Memorias RAM</a></li>
+                <li><a class="dropdown-item" href="#">Impresoras</a></li>
+                <li><a class="dropdown-item" href="#">Teclados</a></li>
+                <li><a class="dropdown-item" href="#">Altavoces</a></li>
               </ul>
             </li>
             
@@ -79,6 +94,14 @@
                 <li><a class="dropdown-item" href="#">Procesadores</a></li>
                 <li><a class="dropdown-item" href="#">Tarjetas Gráficas</a></li>
                 <li><a class="dropdown-item" href="#">Memorias RAM</a></li>
+                <li class="dropdown-submenu2">
+                  <a class="dropdown-item dropdown-toggle" href="#">Placas Base</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Asus</a></li>
+                    <li><a class="dropdown-item" href="#">Nvidia</a></li>
+                    
+                  </ul>
+                </li>
               </ul>
             </li>
           </ul>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador Multiplataforma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .search-box {
+            margin-bottom: 15px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .checkboxes {
+            margin: 15px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Buscador en múltiples motores</h1>
+    <form id="searchForm">
+        <div class="search-box">
+            <input type="text" id="searchQuery" placeholder="Introduce tu búsqueda..." required>
+        </div>
+        <div class="checkboxes">
+            <label><input type="checkbox" name="engine" value="google"> Google</label><br>
+            <label><input type="checkbox" name="engine" value="bing"> Bing</label><br>
+            <label><input type="checkbox" name="engine" value="yahoo"> Yahoo</label><br>
+            <label><input type="checkbox" name="engine" value="duckduckgo"> DuckDuckGo</label><br>
+            <label><input type="checkbox" name="engine" value="ecosia"> Ecosia</label><br>
+        </div>
+        <button type="button" onclick="performSearch()">Buscar</button>
+    </form>
+
+    <script>
+        function performSearch() {
+            const searchQuery = document.getElementById("searchQuery").value.trim();
+            if (!searchQuery) {
+                alert("Por favor, introduce un término de búsqueda.");
+                return;
+            }
+
+            const checkboxes = document.querySelectorAll('input[name="engine"]:checked');
+            if (checkboxes.length === 0) {
+                alert("Selecciona al menos un buscador.");
+                return;
+            }
+
+            // URLs de los buscadores
+            const searchEngines = {
+                google: `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`,
+                bing: `https://www.bing.com/search?q=${encodeURIComponent(searchQuery)}`,
+                yahoo: `https://search.yahoo.com/search?p=${encodeURIComponent(searchQuery)}`,
+                duckduckgo: `https://duckduckgo.com/?q=${encodeURIComponent(searchQuery)}`,
+                ecosia: `https://www.ecosia.org/search?q=${encodeURIComponent(searchQuery)}`
+            };
+
+            // Abrir cada buscador seleccionado en una nueva pestaña
+            checkboxes.forEach(checkbox => {
+                const engine = checkbox.value;
+                window.open(searchEngines[engine], '_blank');
+            });
+        }
+    </script>
+</body>
+</html>
