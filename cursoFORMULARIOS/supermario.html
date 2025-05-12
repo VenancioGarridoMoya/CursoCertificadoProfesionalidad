@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Bros 3 - Pantalla Inicial</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #87CEEB; /* Color del cielo */
+        }
+        .ground {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background-color: #8B4513; /* Color del suelo */
+        }
+        .block {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: #FFD700; /* Color de los bloques */
+            border: 2px solid #8B4513; /* Color del borde de los bloques */
+        }
+        .block-question {
+            background-color: #FFD700; /* Color del bloque de pregunta */
+        }
+        .mario {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background-color: #FF0000; /* Color de Mario */
+            bottom: 100px; /* Altura de Mario */
+            left: 50px; /* Posición inicial de Mario */
+            border-radius: 5px;
+            transition: bottom 0.2s; /* Suaviza el salto */
+        }
+        .mario::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #FFD700; /* Color del sombrero */
+            border-radius: 5px 5px 0 0;
+            top: -20px; /* Posición del sombrero */
+        }
+        .mario::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #000; /* Color de los ojos */
+            border-radius: 50%;
+            top: 10px;
+            left: 10px;
+        }
+        .mario::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #000; /* Color de los ojos */
+            border-radius: 50%;
+            top: 10px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ground"></div>
+    <div class="block block-question" style="left: 100px; top: 200px;"></div>
+    <div class="block" style="left: 150px; top: 160px;"></div>
+    <div class="block" style="left: 200px; top: 120px;"></div>
+    <div class="block" style="left: 250px; top: 160px;"></div>
+    <div class="block" style="left: 300px; top: 200px;"></div>
+    <div class="mario"></div>
+
+    <script>
+        const mario = document.querySelector('.mario');
+        let isJumping = false;
+        let jumpHeight = 0;
+        let gravity = 2;
+        let isOnGround = true;
+
+        document.addEventListener('keydown', function(event) {
+            const marioStyle = window.getComputedStyle(mario);
+            let left = parseInt(marioStyle.left);
+
+            if (event.key === 'ArrowRight') {
+                mario.style.left = left + 10 + 'px'; // Mover a la derecha
+            } else if (event.key === 'ArrowLeft') {
+                mario.style.left = left - 10 + 'px'; // Mover a la izquierda
+            } else if (event.key === 'ArrowUp' && isOnGround) {
+                isJumping = true;
+                isOnGround = false;
+                jumpHeight = 0;
+            }
+        });
+
+        function jump() {
+            if (isJumping) {
+                jumpHeight += gravity;
+                mario.style.bottom = (100 + jumpHeight) + 'px'; // Ajustar la altura de Mario
+                if (jumpHeight >= 100) {
+                    isJumping = false; // Termina el salto
+                }
+            } else if (!isOnGround) {
+                jumpHeight -= gravity;
+                mario.style.bottom = (100 +                jumpHeight) + 'px'; // Ajustar la altura de Mario
+                if (jumpHeight <= 0) {
+                    jumpHeight = 0;
+                    isOnGround = true; // Mario vuelve al suelo
+                    mario.style.bottom = '100px'; // Restablecer la posición de Mario
+                }
+            }
+            requestAnimationFrame(jump);
+        }
+
+        jump(); // Iniciar el bucle de salto
+    </script>
+</body>
+</html>
